@@ -1,0 +1,32 @@
+apple 2 -a,b
+banana 3
+end
+
+delete from Product where count(ProductID) >= 'b' group by ProductName
+
+delete from Product as P1 where P1.ProductID in (select ProductID from (select P2.ProductID,P2.ProductName from Product as P2 group by P2.ProductName, P2.ProductID having count(*) >= 2)t);
+
+
+
+
+buyItems(string, int)
+CustomerDAO
+decrement the quantity of "string" in the inventory table
+create transaction object t
+Add it's members to the Transaction table (get the price of the thing in the process)
+delete t
+
+Order items by price:
+customer or employee object will call this.
+-> sql command
+
+Generate receipt:
+The customer will call this
+Get a the row corresponding to the current Transaction Id, and CustomerName for the given CustomerId by joining transaction and customer
+
+Most purchased item:
+The employee will call this
+sql statement
+
+
+
